@@ -1,0 +1,22 @@
+ref,fileName,date,description,status,publicScore,privateScore
+58077608,second/submission.csv,2026-11-07 03:27:34.210000,"PyramidNet+ShakeDrop 4.95M, 158 ep, 45k split, TA, wd 1e-4, seed 0, 10-view TTA, val 96.72",SubmissionStatus.COMPLETE,0.87700,0.84200
+58077607,second/submission.csv,2026-11-07 03:27:25.853000,"PyramidNet+ShakeDrop 4.95M, 151 ep, full 50k, TA, wd 1e-4, seed 2, 10-view TTA",SubmissionStatus.COMPLETE,0.87300,0.84600
+58077605,submission.csv,2026-11-07 03:27:23.743000,"Shake-Shake 4.79M, 205 ep, 45k split, TA, wd 1e-4, seed 0, 10-view TTA, val 96.56",SubmissionStatus.COMPLETE,0.87300,0.83700
+58077602,submission.csv,2026-11-07 03:27:21.597000,"Shake-Shake 4.79M, 216 ep, full 50k, TA, wd 1e-4, seed 2, 10-view TTA",SubmissionStatus.COMPLETE,0.86800,0.84900
+58055751,submission.csv,2026-11-06 11:15:06.347000,"v10 seed 1: s4 4.52M + SiLU + TA, 300 ep, full 50k, 10-view TTA, no SAM",SubmissionStatus.COMPLETE,0.88800,0.85300
+58055699,submission.csv,2026-11-06 11:13:06.827000,"v10 seed 0: s4 4.52M + SiLU + TA, 300 ep, full 50k, 10-view TTA, no SAM",SubmissionStatus.COMPLETE,0.88900,0.85300
+58038403,submission.csv,2026-11-06 00:01:06.440000,go kwazy,SubmissionStatus.COMPLETE,0.85800,0.82400
+58002467,submission.csv,2026-11-05 00:02:33.340000,"v6: s4 + TA + SAM rho 0.1, 300 ep, full 50k",SubmissionStatus.COMPLETE,0.88100,0.85700
+58002460,submission.csv,2026-11-05 00:02:31.043000,"v8: s4 + TA + SAM, KD (0.5) from r18w + 2 SAM s4 teachers, 300 ep, full 50k",SubmissionStatus.COMPLETE,0.88900,0.86400
+58002455,submission.csv,2026-11-05 00:02:28.813000,"v7 seed 4 (s4 + TA + SAM rho 0.05, 600 ep, full 50k) as submission.csv",SubmissionStatus.COMPLETE,0.89200,0.86600
+58002450,submission.csv,2026-11-05 00:02:26.570000,"v5 seed 2 (s4 + TA + SAM rho 0.05, 300 ep, full 50k) as submission.csv",SubmissionStatus.COMPLETE,0.89300,0.85600
+58002439,submission.csv,2026-11-05 00:02:24.307000,"v9: s4hr (s4 params 4.52M, stage 3 at 16x16) + TA + SAM rho 0.05, 200 ep, full 50k, 10-view TTA",SubmissionStatus.COMPLETE,0.88200,0.84800
+57979472,submission_s4.csv,2026-11-04 09:19:16.667000,"v7: s4 4.52M + TA + SAM rho 0.05, 600 ep, full 50k, seed 4, 10-view TTA",SubmissionStatus.COMPLETE,0.89200,0.86600
+57979471,submission.csv,2026-11-04 09:19:14.607000,"v7: s4 4.52M + TA + SAM rho 0.05, 600 ep, full 50k, seed 3, 10-view TTA",SubmissionStatus.COMPLETE,0.88900,0.85800
+57972011,submission_s2.csv,2026-11-04 05:08:14.537000,"v5: s4 4.52M + TA + SAM rho 0.05, 300 ep, full 50k, seed 2, 10-view TTA",SubmissionStatus.COMPLETE,0.89300,0.85600
+57972010,submission.csv,2026-11-04 05:08:12.373000,"v5: s4 4.52M + TA + SAM rho 0.05, 300 ep, full 50k, seed 1, 10-view TTA",SubmissionStatus.COMPLETE,0.89000,0.86300
+57964674,submission.csv,2026-11-04 00:14:52.347000,,SubmissionStatus.COMPLETE,0.88300,0.85700
+57961045,submission.csv,2026-11-03 21:37:58.253000,"v3: s4 4.52M KD from r18w+2xs4 ensemble, TA, 300 ep, full 50k, 10-view TTA",SubmissionStatus.COMPLETE,0.89000,0.86200
+57958810,submission.csv,2026-11-03 19:37:52.627000,"v2b: s4 4.52M + TrivialAugment, 300 ep, full 50k, 10-view TTA",SubmissionStatus.COMPLETE,0.89100,0.84900
+57956295,submission.csv,2026-11-03 17:54:39.313000,"v2: s4 4.52M + TrivialAugment, 300 ep, 45k train (val 97.38%)",SubmissionStatus.COMPLETE,0.87700,0.84900
+57954299,submission.csv,2026-11-03 16:37:27.977000,"s4 ResNet 4.52M, 200 ep, full 50k",SubmissionStatus.COMPLETE,0.87700,0.85300

@@ -1,0 +1,6 @@
+data.noindex
+__pycache__/
+*.pyc
+/runs/
+.DS_Store
+.ipynb_checkpoints/
