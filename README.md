@@ -13,7 +13,7 @@ Competition: [cifar-10-res-net-architecture-challenge-dl](https://www.kaggle.com
 | Recipe | SGD (Nesterov, momentum 0.9), lr 0.2, batch 256, wd 5e-4, 5% warmup + cosine, label smoothing 0.1, crop + flip + Cutout (`--cutout 16`, a 15x15 hole), TrivialAugment, SAM rho 0.05, 300 epochs, all 50,000 training images, seed 2 |
 | Test-time | average of 10 views (image + flip, at the original position and 4 shifts of 2 px) |
 | Held-out accuracy (same recipe, seed 0, 45,000 / 5,000 split) | 97.66% (flip views) |
-| **Kaggle test accuracy** | **public 89.3%, private 85.6%** (1,000 images each; 87.45% over all 2,000) |
+| **Kaggle test accuracy** | **public 89.3%, private 85.6%** (1,000 images each; 87.45% over all 2,000). Rank 45/81 public, 64/81 private. |
 
 The report explains the 8 to 12 point gap between held-out and test accuracy, and lists all experiments.
 
@@ -65,7 +65,7 @@ GPU runs are not bit-for-bit deterministic, so a new run can differ from ours by
 
 ## Rules we followed
 
-We used only the 50,000 provided training images. No pretrained weights. The hidden test images were never used for training, validation or model selection; the only feedback from them was the official Kaggle score. Every submitted model is a single network under 5M parameters.
+We used only the 50,000 provided training images. No pretrained weights. We never accessed the hidden test images or their labels directly and never trained on them. Our only feedback from them was the official public-leaderboard score, which we used to compare recipes and choose the final submission. Every submitted model is a single network under 5M parameters.
 
 ## References
 

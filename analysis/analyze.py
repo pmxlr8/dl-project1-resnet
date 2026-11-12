@@ -241,7 +241,13 @@ top = p.amax(1)
 wrong_idx = torch.nonzero(pred != Yv).flatten()
 pick = wrong_idx[top[wrong_idx].argsort(descending=True)[:40]]
 cap = {}
-h1 = m.features[8].register_forward_hook(lambda mod, i, o: (cap.__setitem__("a", o), o.retain_grad()))
+def save_activation(mod, inp, out):
+    """Keep the stage-3 activation and its gradient. Returns None, so the layer output is not replaced."""
+    cap["a"] = out
+    out.retain_grad()
+
+
+h1 = m.features[8].register_forward_hook(save_activation)
 fig, ax = plt.subplots(8, 10, figsize=(15, 13))
 for k, idx in enumerate(pick.tolist()):
     img = X[va[idx]][None]
