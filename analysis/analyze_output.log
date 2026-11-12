@@ -17,7 +17,7 @@ over 6 s4 models: images wrong in ANY 227, wrong in ALL 59, wrong in exactly 1 6
 ensemble (not submittable, it only measures variance): all s4 97.70, best 2 97.56, single best 97.66
 
 == C. novelty: accuracy by distance to the nearest training image ==
-nearest neighbours in 102s
+nearest neighbours in 91s
 pixel distance     quintile near->far: [98.3, 97.5, 98.0, 97.2, 97.3]
 feature distance   quintile near->far: [100.0, 99.9, 99.7, 99.1, 89.6]
 pixel L2 < 2.0:    0 images, acc 0.00 | others acc 97.66
@@ -30,13 +30,13 @@ TA only {'clean': 97.38, 'background only (center 16x16 hidden)': 90.88, 'center
 25M teacher {'clean': 97.56, 'background only (center 16x16 hidden)': 91.24, 'center only (border hidden)': 88.74, 'low-pass r<8': 49.14, 'low-pass r<4': 12.14, 'high-pass r>=4': 86.34, 'gray': 92.72}
 
 == E. layer by layer, best model ==
-stage1.1: width  64  active channels  63  dims for 95%/99% of variance  18/ 35  linear probe  54.38
-stage1.2: width  64  active channels  64  dims for 95%/99% of variance  20/ 40  linear probe  59.06
-stage2.1: width 128  active channels 128  dims for 95%/99% of variance  43/ 89  linear probe  73.20
-stage2.2: width 128  active channels 128  dims for 95%/99% of variance  58/102  linear probe  79.38
-stage3.1: width 256  active channels 256  dims for 95%/99% of variance 142/221  linear probe  90.88
+stage1.1: width  64  active channels  63  dims for 95%/99% of variance  18/ 35  linear probe  54.16
+stage1.2: width  64  active channels  64  dims for 95%/99% of variance  20/ 40  linear probe  59.02
+stage2.1: width 128  active channels 128  dims for 95%/99% of variance  43/ 89  linear probe  73.14
+stage2.2: width 128  active channels 128  dims for 95%/99% of variance  58/102  linear probe  79.32
+stage3.1: width 256  active channels 256  dims for 95%/99% of variance 142/221  linear probe  90.96
 stage3.2: width 256  active channels 256  dims for 95%/99% of variance  94/195  linear probe  96.20
-stage4.1: width 320  active channels 318  dims for 95%/99% of variance  26/ 78  linear probe  97.32
+stage4.1: width 320  active channels 318  dims for 95%/99% of variance  26/ 78  linear probe  97.36
 remove stage1.1: held-out 14.26 (full 97.66)
 remove stage1.2: held-out 68.42 (full 97.66)
 remove stage2.2: held-out 94.00 (full 97.66)
@@ -44,60 +44,5 @@ remove stage3.2: held-out 87.72 (full 97.66)
 params per block: {'stage1.1': '0.07M', 'stage1.2': '0.07M', 'stage2.1': '0.23M', 'stage2.2': '0.30M', 'stage3.1': '0.92M', 'stage3.2': '1.18M', 'stage4.1': '1.74M'}
 
 == F. Grad-CAM figure ==
-Traceback (most recent call last):
-  File "/Users/lappy/Desktop/NYU/FALL'26/DL/kaggle/interp/analyze.py", line 249, in <module>
-    out = m(xb)
-          ^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/Desktop/NYU/FALL'26/DL/kaggle/train.py", line 126, in forward
-    self.net = nn.Sequential(nn.AdaptiveAvgPool2d(1), nn.Conv2d(c, c // r, 1), act(), nn.Conv2d(c // r, c, 1), nn.Sigmoid())
-                                                   ^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-            ^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/Desktop/NYU/FALL'26/DL/kaggle/train.py", line 107, in forward
-    
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-            ^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 548, in forward
-    return self._conv_forward(input, self.weight, self.bias)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/lappy/.venvs/jmri311/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 543, in _conv_forward
-    return F.conv2d(
-           ^^^^^^^^^
-TypeError: conv2d() received an invalid combination of arguments - got (tuple, Parameter, NoneType, tuple, tuple, tuple, int), but expected one of:
- * (Tensor input, Tensor weight, Tensor bias = None, tuple of ints stride = 1, tuple of ints padding = 0, tuple of ints dilation = 1, int groups = 1)
-      didn't match because some of the arguments have invalid types: (!tuple of (NoneType, NoneType)!, !Parameter!, !NoneType!, !tuple of (int, int)!, !tuple of (int, int)!, !tuple of (int, int)!, !int!)
- * (Tensor input, Tensor weight, Tensor bias = None, tuple of ints stride = 1, str padding = "valid", tuple of ints dilation = 1, int groups = 1)
-      didn't match because some of the arguments have invalid types: (!tuple of (NoneType, NoneType)!, !Parameter!, !NoneType!, !tuple of (int, int)!, !tuple of (int, int)!, !tuple of (int, int)!, !int!)
-
+saved gradcam_errors.png
+DONE
